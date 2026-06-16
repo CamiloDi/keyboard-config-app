@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Keyboard Configurator</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            max-width: 900px;
+            margin: auto;
+        }
+
+        .row {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 10px;
+            align-items: center;
+        }
+
+        input,
+        select,
+        button {
+            padding: 8px;
+            font-size: 14px;
+        }
+
+        input.name {
+            width: 160px;
+        }
+
+        input.sequence {
+            width: 460px;
+        }
+
+        button {
+            cursor: pointer;
+        }
+
+        pre {
+            background: #111;
+            color: #0f0;
+            padding: 12px;
+            height: 180px;
+            overflow: auto;
+            border-radius: 6px;
+        }
+
+        .btn-id {
+            width: 60px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Keyboard Configurator</h1>
+
+    <div class="row">
+        <button id="refreshPorts">Actualizar puertos</button>
+        <select id="ports"></select>
+        <button id="connect">Conectar</button>
+        <button id="disconnect">Desconectar</button>
+    </div>
+
+    <hr />
+
+    <h2>Sistema operativo</h2>
+
+    <div class="row">
+        <select id="os">
+            <option value="MAC">MAC</option>
+            <option value="WINDOWS">WINDOWS</option>
+        </select>
+
+        <button id="saveOs">Guardar SO</button>
+    </div>
+
+    <hr />
+
+    <h2>Botones</h2>
+
+    <div id="buttons"></div>
+
+    <hr />
+
+    <div class="row">
+        <button id="listConfig">Ver configuración</button>
+        <button id="defaults">Restaurar defaults</button>
+    </div>
+
+    <h2>Log</h2>
+    <pre id="log"></pre>
+
+    <script src="renderer.js"></script>
+</body>
+
+</html>
