@@ -17,6 +17,7 @@ Keyboard Config App is an Electron application that connects to a custom keyboar
 - [Testing](#testing)
 - [Project Structure](#project-structure)
 - [Build](#build)
+- [Releases](#releases)
 - [Notes](#notes)
 
 ## About
@@ -231,6 +232,28 @@ Configured targets:
 - macOS: `dmg`, `zip`
 - Windows: `nsis`
 
+## Releases
+
+GitHub releases are built automatically with GitHub Actions when a version tag is pushed.
+
+To publish a new release:
+
+```bash
+git pull --ff-only
+npm test
+git tag v1.0.0
+git push origin v1.0.0
+```
+
+Replace `v1.0.0` with the version you want to publish.
+
+The release workflow builds:
+
+- Windows installer on `windows-latest`.
+- macOS `dmg` and `zip` on `macos-latest`.
+
+When both builds finish, the workflow creates a GitHub Release and uploads the generated files from `dist/`.
+
 ## Notes
 
 - The renderer process does not access Node.js directly.
@@ -238,4 +261,3 @@ Configured targets:
 - The safe frontend API is exposed as `window.macropad` from `preload.js`.
 - Serial communication is handled in `main.js`.
 - Incoming Arduino lines are forwarded to the renderer through the `serial-data` IPC channel.
-

@@ -38,6 +38,7 @@ pnpm-debug.log*
 .DS_Store
 Thumbs.db
 Desktop.ini
+__MACOSX/
 
 # Editor files
 .vscode/
@@ -49,4 +50,4 @@ Desktop.ini
 tmp/
 temp/
 .cache/
-
+.git-empty-backup/
